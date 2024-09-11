@@ -1,0 +1,14 @@
+__pycache__
+*.pyc
+*.pyo
+.git
+.venv
+env/
+venv/
+.DS_Store
+admin_user.json
+email_config.json
+google_auth_config.json
+instance
+flask_data.db
+backend/client_secret_1040061512230-pffudgu09k0ukpcia7m117b1ulmdtkpf.apps.googleusercontent.com.json

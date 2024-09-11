@@ -1,0 +1,21 @@
+# docker-compose.yml
+version: '3.8'
+
+services:
+  backend_server:
+    build:
+      context: .
+      dockerfile: backend.Dockerfile
+    volumes:
+      - .:/app
+      - ./backend/flask_data.db:/app/backend/flask_data.db:rw
+    ports:
+      - "5000:5000"
+    privileged: true
+    environment:
+      - OAUTHLIB_INSECURE_TRANSPORT=1
+      - PYTHONDONTWRITEBYTECODE=1
+      - FLASK_APP=backend/wsgi.py
+      - FLASK_ENV=development
+      - FLASK_DEBUG=1
+    restart: always
